@@ -21,7 +21,8 @@ def create_checkout_session(amount=500, user_email="student@phunziro.mw", first_
         "Authorization": f"Bearer {PAYCHANGU_SECRET_KEY}"
     }
 
-    LOCAL_URL = "https://9ade-102-70-101-204.ngrok-free.app/"
+    # LOCAL_URL = "https://9ade-102-70-101-204.ngrok-free.app/"
+    PRODUCTION_URL = "https://phunziro-ai.streamlit.app/"
     payload = {
         "amount": amount,
         "currency": "MWK",
@@ -29,8 +30,8 @@ def create_checkout_session(amount=500, user_email="student@phunziro.mw", first_
         "first_name": first_name,
         "last_name": last_name,
         "email": user_email,
-        "callback_url": LOCAL_URL,  # This should be your actual callback URL
-        "return_url": LOCAL_URL,
+        "callback_url": PRODUCTION_URL,  # This should be your actual callback URL
+        "return_url": PRODUCTION_URL,  # This should be your actual return URL
         "customization": {
             "title": "PhunziroAI - Daily Pass",
             "description": "Unlock PDF Exam Quiz Generator"
